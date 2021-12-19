@@ -13,7 +13,10 @@ function App() {
           <Link to='/invoices'>Invoces</Link>|{" "}
           <Link to='/expenses'>Expenses</Link>|{" "}
           <Link to='/protected'>Protected</Link>|{" "}
-          <Link to='/login'>Login</Link>
+          <Link to='/login'>Login</Link>|{" "}
+          <Link to='/dashboard'>Dashboard</Link>|{" "}
+          <Link to='/dashboard2'>Dashboard2</Link>|{" "}
+          <Link to='/dashboard4'>Dashboard4</Link>
         </nav>
         <Outlet />
       </div>
