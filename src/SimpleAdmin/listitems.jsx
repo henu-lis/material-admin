@@ -132,6 +132,18 @@ export const MuiList = () => {
             <ListItemButton onClick={() => linkTo('introduction')}>
                 <ListItemText primary="01 Introduction" />
             </ListItemButton>
+            <ListItemButton onClick={() => linkTo('uxdesign')}>
+                <ListItemText primary="02 UX Design" />
+            </ListItemButton>
+            <ListItemButton onClick={() => linkTo('usestyles')}>
+                <ListItemText primary="03 Use Styles" />
+            </ListItemButton>
+            <ListItemButton onClick={() => linkTo('button')}>
+                <ListItemText primary="04 Button" />
+            </ListItemButton>            
+            <ListItemButton onClick={() => linkTo('typography')}>
+                <ListItemText primary="05 Typography" />
+            </ListItemButton>
         </List>
     )
 }
