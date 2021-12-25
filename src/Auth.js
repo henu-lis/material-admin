@@ -2,7 +2,7 @@ import { useContext, createContext, useState } from "react";
 import { Navigate, useLocation } from 'react-router-dom';
 
 const fakeAuthProvider = {
-    isAuthenticated: true,//fasle
+    isAuthenticated: false,
     signin(callback) {
         fakeAuthProvider.isAuthenticated = true;
         setTimeout(callback, 100);
@@ -14,7 +14,7 @@ const fakeAuthProvider = {
 }
 
 function useProviderAuth() {
-    const [user, setUser] = useState('douya');
+    const [user, setUser] = useState(null);
 
     const signin = (newUser, cb) => {
         return fakeAuthProvider.signin(() => {

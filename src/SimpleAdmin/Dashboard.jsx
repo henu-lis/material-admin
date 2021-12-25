@@ -17,7 +17,8 @@ import {
 } from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
 import NotificationsIcon from '@mui/icons-material/Notifications';
-import { MuiList, secondaryListItems } from './listitems';
+import { secondaryListItems } from './listitems';
+import { MuiList } from '../routes/routeConfigs';
 import { useAuth } from '../Auth';
 
 function Copyright(props) {

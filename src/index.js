@@ -1,40 +1,22 @@
-import React from 'react';
+import React, { Suspense} from 'react';
 import ReactDOM from 'react-dom';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import { RequireAuth, AuthProvider } from './Auth';
-
-import LoginPage from './views/LoginPage';
-import Dashboard from './SimpleAdmin/Dashboard';
-import Dashboard2 from './SimpleAdmin/Dashboard2';
-import Orders from './SimpleAdmin/Order';
-import Chart from './SimpleAdmin/Chart';
-import Deposits from './SimpleAdmin/Deposits';
-
-import Introduction from './views/Introduction';
-import UxDesign from './views/UxDesign';
-import UseStylesTest from './views/UseStylesTest';
-import ButtonTest from './views/ButtonTest';
-import TypographyTest from './views/TypographyTest';
+import { BrowserRouter, } from 'react-router-dom';
+import { AuthProvider } from './Auth';
+import AppMain from './AppMain';
 
 ReactDOM.render(
   <React.StrictMode>
+    <Suspense fallback={<div>loading..........</div>}>
     <AuthProvider>
       <BrowserRouter>
-        <Routes>
+        <AppMain />
+        {/* <Routes>
           <Route path='/' element={
             <RequireAuth>
               <Dashboard />
             </RequireAuth>
           }>
             <Route path='/order' element={<Orders />} />
-            <Route path='/chart' element={<Chart />} />
-            <Route path='/deposit' element={<Deposits />} />
-
-            <Route path='/introduction' element={<Introduction />} />
-            <Route path='/uxdesign' element={<UxDesign />} />
-            <Route path='/usestyles' element={<UseStylesTest />} />
-            <Route path='/button' element={<ButtonTest />} />
-            <Route path='/typography' element={<TypographyTest />} />
             <Route index element={
               <main style={{ padding: '1rem' }}>
                 Welcome to mian page
@@ -42,7 +24,6 @@ ReactDOM.render(
             } />
           </Route>
           <Route path='/login' element={<LoginPage />} />
-          <Route path='/dashboard2' element={<Dashboard2 />} />
           <Route
             path='*'
             element={
@@ -51,9 +32,10 @@ ReactDOM.render(
               </main>
             }
           ></Route>
-        </Routes>
+        </Routes> */}
       </BrowserRouter>
-    </AuthProvider>
+      </AuthProvider>
+      </Suspense>
   </React.StrictMode >,
   document.getElementById('root')
 );

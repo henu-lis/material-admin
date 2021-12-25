@@ -17,7 +17,7 @@ import {
     Layers as LayersIcon,
     Assignment as AssignmentIcon
 } from '@mui/icons-material'
-
+import { subRoutes } from '../routes/routeConfigs';
 
 
 export const MainListItems = () => {
@@ -122,28 +122,51 @@ export const secondaryListItems = (
     </div>
 )
 
-export const MuiList = () => {
-    let navigate = useNavigate();
-    const linkTo = (href) => {
-        navigate(`/${href}`);
-    }
-    return (
-        <List>
-            <ListItemButton onClick={() => linkTo('introduction')}>
-                <ListItemText primary="01 Introduction" />
-            </ListItemButton>
-            <ListItemButton onClick={() => linkTo('uxdesign')}>
-                <ListItemText primary="02 UX Design" />
-            </ListItemButton>
-            <ListItemButton onClick={() => linkTo('usestyles')}>
-                <ListItemText primary="03 Use Styles" />
-            </ListItemButton>
-            <ListItemButton onClick={() => linkTo('button')}>
-                <ListItemText primary="04 Button" />
-            </ListItemButton>            
-            <ListItemButton onClick={() => linkTo('typography')}>
-                <ListItemText primary="05 Typography" />
-            </ListItemButton>
-        </List>
-    )
-}
+// export const MuiList = () => {
+//     let navigate = useNavigate();
+//     const linkTo = (href) => {
+//         navigate(href);
+//     }
+
+//     return (
+//         <List>
+//             {subRoutes.map((rt, index) => (
+//                 <ListItemButton key={index} onClick={() => linkTo(rt.path)}>
+//                     <ListItemText primary={rt.name} />
+//                 </ListItemButton>
+//             ))}
+//         </List>
+//     )
+// }
+
+// export const MuiList = () => {
+//     let navigate = useNavigate();
+//     const linkTo = (href) => {
+//         navigate(`/${href}`);
+//     }
+//     return (
+//         <List>
+//             <ListItemButton onClick={() => linkTo('introduction')}>
+//                 <ListItemText primary="01 Introduction" />
+//             </ListItemButton>
+//             <ListItemButton onClick={() => linkTo('uxdesign')}>
+//                 <ListItemText primary="02 UX Design" />
+//             </ListItemButton>
+//             <ListItemButton onClick={() => linkTo('usestyles')}>
+//                 <ListItemText primary="03 Use Styles" />
+//             </ListItemButton>
+//             <ListItemButton onClick={() => linkTo('button')}>
+//                 <ListItemText primary="04 Button" />
+//             </ListItemButton>
+//             <ListItemButton onClick={() => linkTo('typography')}>
+//                 <ListItemText primary="05 Typography" />
+//             </ListItemButton>
+//             <ListItemButton onClick={() => linkTo('themes')}>
+//                 <ListItemText primary="06 Themes" />
+//             </ListItemButton>
+//             <ListItemButton onClick={() => linkTo('paper')}>
+//                 <ListItemText primary="07 Paper" />
+//             </ListItemButton>
+//         </List>
+//     )
+// }
