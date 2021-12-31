@@ -18,6 +18,9 @@ const LoginPage = lazy(() => import('../views/LoginPage'));
 const Dashboard = lazy(() => import('../SimpleAdmin/Dashboard'));
 const Introduction = lazy(() => import('../views/Introduction'));
 const DarkModeTest = lazy(() => import('../views/DarkModeTest'));
+const GridTest = lazy(() => import('../views/GridTest'));
+const CardTest = lazy(() => import("../views/CardTest"));
+const TableTest = lazy(() => import('../views/TableTest'));
 
 const subRoutes = [
     {
@@ -59,6 +62,21 @@ const subRoutes = [
         path: "/darkmode",
         element: DarkModeTest,
         name: '08 Dark Theme'
+    },
+    {
+        path: "/grid",
+        element: GridTest,
+        name: '11 Grid'
+    },
+    {
+        path: "/card",
+        element: CardTest,
+        name: '12 Cards'
+    },
+    {
+        path: "/table",
+        element: TableTest,
+        name: '13 Table'
     }
 ]
 

@@ -2,6 +2,7 @@ import * as React from 'react';
 import { styled, createTheme, ThemeProvider, responsiveFontSizes } from '@mui/material/styles';
 import { Checkbox, Box, Typography } from '@mui/material';
 import { green, orange, red } from '@mui/material/colors';
+import BorderBox from '../Components/BorderBox';
 
 const outTheme = createTheme({
     palette: {
@@ -25,13 +26,6 @@ const innerTheme = (theme) => {
 
 //响应式 theme
 let responsiveTheme = responsiveFontSizes(createTheme());
-
-const BorderBox = styled(Box)(({ theme }) => ({
-    padding: 16,
-    margin: 16,
-    border: '1px solid',
-    borderRadius: '4px'
-}));
 
 const BgDiv = styled('div')(({ theme }) => ({
     padding: theme.spacing(1), //1*8px
