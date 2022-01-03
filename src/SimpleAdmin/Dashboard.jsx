@@ -83,7 +83,11 @@ function DashboardContent() {
 
     return (
         <ThemeProvider theme={mdTheme}>
-            <Box sx={{ display: 'flex' }}>
+            <Box sx={{
+                display: 'flex',
+                overflow: 'hidden',
+                height:'100%'
+            }}>
                 <CssBaseline />
                 <AppBar position="absolute" open={open}>
                     <Toolbar
@@ -118,8 +122,14 @@ function DashboardContent() {
                         </IconButton>
                     </Toolbar>
                 </AppBar>
-                <Drawer variant="permanent" open={open}>
-                    <Toolbar />
+                <Drawer variant="permanent" open={open}
+                    sx={{
+                        overflow: 'auto',
+                        height: '100vh',
+                        marginTop: '65px'
+                    }}
+                >
+                    {/* <Toolbar /> */}
                     <MuiList />
                     <Divider />
                     <List>{secondaryListItems}</List>
@@ -134,10 +144,10 @@ function DashboardContent() {
                         flexGrow: 1,
                         height: '100vh',
                         overflow: 'auto',
+                        marginTop: '65px'
                     }}
                 >
-                    <Toolbar />
-                    <Container maxWidth="lg" sx={{ mt: 4, mb: 4 }}>
+                    <Container maxWidth="lg" sx={{ mt: 4, mb: 4,minHeight:'calc(100% - 65px)' }}>
                         <Outlet />
                         <Copyright sx={{ pt: 4 }} />
                     </Container>

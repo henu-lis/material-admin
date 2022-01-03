@@ -21,63 +21,82 @@ const DarkModeTest = lazy(() => import('../views/DarkModeTest'));
 const GridTest = lazy(() => import('../views/GridTest'));
 const CardTest = lazy(() => import("../views/CardTest"));
 const TableTest = lazy(() => import('../views/TableTest'));
+const PokeIndex = lazy(() => import('../views/pokemons/PokeIndex'));
+const PokeList = lazy(() => import('../views/pokemons/PokeList'));
+const PokeDetail = lazy(() => import('../views/pokemons/PokeDetail'));
 
 const subRoutes = [
     {
-        path: '/introduction',
+        path: 'introduction',
         element: Introduction,
         name: '01 Introduction'
     },
     {
-        path: '/uxdesign',
+        path: 'uxdesign',
         element: UxDesign,
         name: '02 UX Design'
     },
     {
-        path: '/usestyles',
+        path: 'usestyles',
         element: UseStylesTest,
         name: '03 Use Styles'
     },
     {
-        path: '/button',
+        path: 'button',
         element: ButtonTest,
         name: '04 Button'
     },
     {
-        path: '/typography',
+        path: 'typography',
         element: TypographyTest,
         name: '05 Typography'
     },
     {
-        path: '/themes',
+        path: 'themes',
         element: ThemesTest,
         name: '06 Themes'
     },
     {
-        path: '/paper',
+        path: 'paper',
         element: PaperTest,
         name: '07 Paper'
     },
     {
-        path: "/darkmode",
+        path: "darkmode",
         element: DarkModeTest,
         name: '08 Dark Theme'
     },
     {
-        path: "/grid",
+        path: "grid",
         element: GridTest,
         name: '11 Grid'
     },
     {
-        path: "/card",
+        path: "card",
         element: CardTest,
         name: '12 Cards'
     },
     {
-        path: "/table",
+        path: "table",
         element: TableTest,
         name: '13 Table'
-    }
+    },
+    {
+        path: "pokemons",
+        element: PokeIndex,
+        name: '14 Pokemons',
+        children: [
+            {
+                index: true,
+                element: PokeList
+            },
+            {
+                path:':pokeId',
+                element: PokeDetail
+            }
+
+        ]
+    },
 ]
 
 export const MuiList = () => {
@@ -95,6 +114,24 @@ export const MuiList = () => {
             ))}
         </List>
     )
+}
+
+function mapRoute(routeObj, routeList) {
+    for (var i = 0; i < routeList.length; i++) {
+        var rc = routeList[i];
+
+        var child = {
+            path: rc.path || undefined,
+            element: <rc.element />,
+            index: rc.index || false
+        };
+
+        if (rc.children && rc.children.length > 0) {
+            child.children = [];
+            mapRoute(child, rc.children);
+        }
+        routeObj.children.push(child);
+    }
 }
 
 
@@ -151,20 +188,25 @@ const routes = (isLoggedIn, location) => {
         }
     ];
 
-    subRoutes.forEach((rt, index) => {
-        routeArray[0].children.push({
-            path: rt.path,
-            element: <rt.element />
-        });
-    })
+    // subRoutes.forEach((rt, index) => {
+    //     routeArray[0].children.push({
+    //         path: rt.path,
+    //         element: <rt.element />
+    //     });
+    // })
+
+    mapRoute(routeArray[0], subRoutes);
+
     routeArray[0].children.push({
         index: true,
         element: <main style={{ padding: '1rem' }}>
             Welcome to mian page
         </main>
     });
+    console.log(routeArray[0]);
     return routeArray;
 }
+
 
 export default routes;
 
