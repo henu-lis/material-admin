@@ -99,7 +99,7 @@ const PokeList = () => {
 
         return (
             <Grid item xs={12} sm={4} key={pokemonId}>
-                <Card onClick={() => navigate(`/pokemons/${id}`)}>
+                <Card onClick={() => navigate(`${id}`)}>
                     <CardMedia
                         image={sprite}
                         style={{ width: '130px', height: '130px', margin: 'auto' }}

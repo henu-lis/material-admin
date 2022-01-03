@@ -14,6 +14,8 @@ import TypographyTest from '../views/TypographyTest';
 import ThemesTest from '../views/ThemesTest';
 import PaperTest from '../views/PaperTest';
 
+import { TabContent1, TabContent2, TabContent3 } from '../views/TabTest';
+
 const LoginPage = lazy(() => import('../views/LoginPage'));
 const Dashboard = lazy(() => import('../SimpleAdmin/Dashboard'));
 const Introduction = lazy(() => import('../views/Introduction'));
@@ -24,6 +26,7 @@ const TableTest = lazy(() => import('../views/TableTest'));
 const PokeIndex = lazy(() => import('../views/pokemons/PokeIndex'));
 const PokeList = lazy(() => import('../views/pokemons/PokeList'));
 const PokeDetail = lazy(() => import('../views/pokemons/PokeDetail'));
+const TabTest = lazy(() => import('../views/TabTest'));
 
 const subRoutes = [
     {
@@ -91,12 +94,30 @@ const subRoutes = [
                 element: PokeList
             },
             {
-                path:':pokeId',
+                path: ':pokeId',
                 element: PokeDetail
             }
-
         ]
     },
+    {
+        path: "tabs",
+        element: TabTest,
+        name: '15 Tabs',
+        children: [
+            {
+                path: 'tab1',
+                element: TabContent1
+            },
+            {
+                path: 'tab2',
+                element: TabContent2
+            },
+            {
+                path: 'tab3',
+                element: TabContent3
+            },
+        ]
+    }
 ]
 
 export const MuiList = () => {
