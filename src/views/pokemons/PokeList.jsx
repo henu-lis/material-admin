@@ -8,12 +8,9 @@ import {
     CardContent,
     CardMedia,
     Typography,
-    Button,
     CircularProgress,
-    IconButton,
     InputBase
 } from '@mui/material';
-import MenuIcon from '@mui/icons-material/Menu';
 import SearchIcon from '@mui/icons-material/Search';
 
 import { useNavigate } from 'react-router-dom';

@@ -31,7 +31,7 @@ function PokeDetail() {
     const generatePokemonJsx = () => {
 
         const { name, id, species, height, weight, types, sprites } = pokemon;
-        const fullImageUrl = `https://pokeres.bastionbot.org/images/pokemon/${id}.png`;
+        //const fullImageUrl = `https://pokeres.bastionbot.org/images/pokemon/${id}.png`;
         const { front_default } = sprites;
 
         return (

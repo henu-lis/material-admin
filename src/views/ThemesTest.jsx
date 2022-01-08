@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { styled, createTheme, ThemeProvider, responsiveFontSizes } from '@mui/material/styles';
-import { Checkbox, Box, Typography } from '@mui/material';
+import { Checkbox, Typography } from '@mui/material';
 import { green, orange, red } from '@mui/material/colors';
 import BorderBox from '../Components/BorderBox';
 

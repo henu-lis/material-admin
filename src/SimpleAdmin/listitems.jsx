@@ -1,7 +1,6 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom'
 import {
-    List,
     ListItem,
     ListItemIcon,
     ListItemText,
@@ -16,8 +15,7 @@ import {
     BarChart as BarChartIcon,
     Layers as LayersIcon,
     Assignment as AssignmentIcon
-} from '@mui/icons-material'
-import { subRoutes } from '../routes/routeConfigs';
+} from '@mui/icons-material';
 
 
 export const MainListItems = () => {

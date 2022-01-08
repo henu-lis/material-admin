@@ -27,6 +27,14 @@ const PokeIndex = lazy(() => import('../views/pokemons/PokeIndex'));
 const PokeList = lazy(() => import('../views/pokemons/PokeList'));
 const PokeDetail = lazy(() => import('../views/pokemons/PokeDetail'));
 const TabTest = lazy(() => import('../views/TabTest'));
+const TablePaginationTest = lazy(() => import('../views/TablePagination'));
+const DrawerTest = lazy(() => import('../views/drawers/DrawerTest'));
+const Drawer01 = lazy(() => import('../views/drawers/Drawer01'));
+const Drawer02 = lazy(() => import('../views/drawers/Drawer02'));
+const Drawer03 = lazy(() => import('../views/drawers/Drawer03'));
+const BreadcrumbsTest = lazy(() => import('../views/breadcrumbs/BreadcrumbsTest'));
+const Blist = lazy(() => import('../views/breadcrumbs/Blist'));
+const Bcontent = lazy(() => import('../views/breadcrumbs/Bcontent'));
 
 const subRoutes = [
     {
@@ -115,7 +123,49 @@ const subRoutes = [
             {
                 path: 'tab3',
                 element: TabContent3
+            }
+        ]
+    },
+    {
+        path: "tablepagination",
+        element: TablePaginationTest,
+        name: '16 TablePagination',
+    },
+    {
+        path: "drawer",
+        element: DrawerTest,
+        name: '17 Drawer',
+        children: [
+            {
+                index: true,
+                //path: 'drawer01',
+                element: Drawer01
             },
+            {
+                path: 'drawer02',
+                element: Drawer02
+            },
+            {
+                path: 'drawer03',
+                element: Drawer03
+            }
+        ]
+    },
+    {
+        path: "breadcrumb",
+        element: BreadcrumbsTest,
+        name: '18 Breadcrumbs',
+        children: [
+            {
+                path: 'blist',
+                element: Blist,
+                children: [
+                    {
+                        path: 'bcontent',
+                        element: Bcontent,
+                    }
+                ]
+            }
         ]
     }
 ]
@@ -224,7 +274,7 @@ const routes = (isLoggedIn, location) => {
             Welcome to mian page
         </main>
     });
-    console.log(routeArray[0]);
+    //console.log(routeArray[0]);
     return routeArray;
 }
 
