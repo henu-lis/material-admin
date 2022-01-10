@@ -36,6 +36,7 @@ const BreadcrumbsTest = lazy(() => import('../views/breadcrumbs/BreadcrumbsTest'
 const Blist = lazy(() => import('../views/breadcrumbs/Blist'));
 const Bcontent = lazy(() => import('../views/breadcrumbs/Bcontent'));
 const SnackbarTest = lazy(() => import('../views/SnackbarTest'));
+const AccordionTest = lazy(() => import('../views/AccordionTest'));
 
 const subRoutes = [
     {
@@ -173,6 +174,11 @@ const subRoutes = [
         path: "snackbar",
         element: SnackbarTest,
         name: '19 Snackbar'
+    },
+    {
+        path: "accordion",
+        element: AccordionTest,
+        name: '20 Accordion'
     }
 ]
 
